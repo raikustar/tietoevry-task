@@ -10,13 +10,13 @@ import requests
 @click.option("-i", "--input_file", type=click.Path(exists=True), help="Path to a csv file.")
 @click.option("-t", "--timeout", default=3, help="URL requests timeout threshold in seconds.")
 
-def check_url_from_file(input_file: str, timeout: float):
+def check_url_from_file(input_file: str, timeout: int):
     """
     Prints out website responses from a csv file, line by line.
 
     Args:
         input_file (string): Takes csv file as input.
-        timeout (float): A number that is used for the request timeout. Default number is 3.
+        timeout (int): A number that is used for the request timeout. Default number is 3.
 
     """
 
@@ -34,7 +34,7 @@ def check_url_from_file(input_file: str, timeout: float):
             click.echo(f"Error: {e}")
 
 
-def line_parse(current_line: list, time_out: float) -> str:
+def line_parse(current_line: list, time_out: int) -> str:
     """
     Reads a line from a csv file.
 
@@ -44,7 +44,7 @@ def line_parse(current_line: list, time_out: float) -> str:
 
     Args:
         current_line (list): Current line as a list.
-        time_out (float): A number that is used for the request timeout. 
+        time_out (int): A number that is used for the request timeout. 
 
     """
     decimal_places = 2
