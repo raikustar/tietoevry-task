@@ -16,7 +16,7 @@ def check_url_from_file(input_file: str, timeout: int):
 
     Args:
         input_file (string): Takes csv file as input.
-        timeout (int): A number that is used for the request timeout. Default number is 3.
+        timeout (int): A number that is used for the request timeout limit. Default number is 3.
 
     """
 
@@ -44,7 +44,7 @@ def line_parse(current_line: list, time_out: int) -> str:
 
     Args:
         current_line (list): Current line as a list.
-        time_out (int): A number that is used for the request timeout. 
+        time_out (int): A number that is used for the request timeout limit. 
 
     """
     decimal_places = 2
