@@ -11,4 +11,5 @@ Assignment 1 - python 3.13
 * py .\checkurl.py -i .\testfile.csv
 
 Assignement 2
-Just SQL in a text file inside of postgresql folder.
+
+* Just SQL in a text file inside of the postgresql folder.
