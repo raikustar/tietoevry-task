@@ -49,13 +49,16 @@ def line_parse(current_line: list, time_out: int) -> str:
     """
     decimal_places = 2
     try:
-        name, url = "".join(current_line).split("|")
-        response = requests.get(url, timeout=time_out)
-        response_time = round(response.elapsed.total_seconds(), decimal_places)
+        if len(current_line) == 1:
+            name, url = "".join(current_line).split("|")
+            response = requests.get(url, timeout=time_out)
+            response_time = round(response.elapsed.total_seconds(), decimal_places)
 
-        return f'"{name}", HTTP {response.status_code}, {response_time} seconds'
+            return f'"{name}", HTTP {response.status_code}, {response_time} seconds'
     except Exception as e:
-        if isinstance(e, requests.exceptions.ConnectTimeout):
+        if len(current_line) == 1:
+            return "Incorrect format, skipping current line."
+        elif isinstance(e, requests.exceptions.ConnectTimeout):
             return f'"Skipping {url}"'
         else:
             return f'{e}'
