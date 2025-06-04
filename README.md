@@ -1,3 +1,5 @@
+git clone https://github.com/raikustar/tietoevry-task
+
 Assignment 1
 
 * cd .\python\
