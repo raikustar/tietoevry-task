@@ -1,8 +1,8 @@
-Made with python 3.13 
+
 
 git clone https://github.com/raikustar/tietoevry-task
 
-Assignment 1
+Assignment 1 - python 3.13 
 
 * cd .\python\
 * py -3.13 -m virtualenv env
