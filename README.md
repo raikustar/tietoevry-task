@@ -9,3 +9,6 @@ Assignment 1 - python 3.13
 * .\env\Scripts\activate
 * pip install -r .\requirements.txt
 * py .\checkurl.py -i .\testfile.csv
+
+Assignement 2
+Just SQL in a text file.
