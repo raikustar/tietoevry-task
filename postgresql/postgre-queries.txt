@@ -1,0 +1,31 @@
+Made a database in pgAdmin called tietoevry. 
+
+1. Create table
+CREATE TABLE transaction (
+	transaction_id SERIAL PRIMARY KEY,
+	customer_id INTEGER,
+	value_date DATE NOT NULL DEFAULT CURRENT_DATE,
+	amount INTEGER
+);
+
+
+2. Insert into table 
+INSERT INTO transaction (customer_id, value_date, amount)
+VALUES (2, '31-01-2025', 500);
+
+
+3. Return cumulative_sum and total_amount
+SELECT customer_id, amount,
+	SUM(amount) OVER (PARTITION BY customer_id ORDER BY value_date, transaction_id) AS cumulative_sum,
+	SUM(amount) OVER (PARTITION BY customer_id) AS total_amount
+FROM 
+	transaction
+ORDER BY
+	customer_id;
+
+
+
+
+Used this article as an example.
+Most of my postgresql has come from using it through Java Spring Boot with annotations.
+https://postgresqlblog.hashnode.dev/how-to-use-cumulative-aggregation-in-postgresql-a-step-by-step-retail-use-case
