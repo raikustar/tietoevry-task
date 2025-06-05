@@ -8,6 +8,7 @@ Assignment 1 - python 3.13
 * py -3.13 -m virtualenv env
 * .\env\Scripts\activate
 * pip install -r .\requirements.txt
+* pylint .\checkurl.py
 * py .\checkurl.py -i .\testfile.csv
 
 Assignement 2
