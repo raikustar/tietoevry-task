@@ -15,8 +15,11 @@ VALUES (2, '31-01-2025', 500);
 
 
 3. Return cumulative_sum and total_amount
-SELECT customer_id, amount,
-	SUM(amount) OVER (PARTITION BY customer_id ORDER BY value_date, transaction_id) AS cumulative_sum,
+SELECT 
+	customer_id, 
+	value_date,
+	amount,
+	SUM(amount) OVER (PARTITION BY customer_id, EXTRACT(MONTH FROM value_date) ORDER BY value_date, transaction_id) AS cumulative_sum,
 	SUM(amount) OVER (PARTITION BY customer_id) AS total_amount
 FROM 
 	transaction
